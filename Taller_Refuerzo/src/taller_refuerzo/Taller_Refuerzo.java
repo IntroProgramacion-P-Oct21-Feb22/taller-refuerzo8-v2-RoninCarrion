@@ -39,6 +39,7 @@ public class Taller_Refuerzo {
         String nombre_cliente;
         int cedula;
         int precio_computadora = 0;
+        double suma_pagar = 0;
         System.out.printf("Bienvenido a esta empresa tecnológica."
                 + " En stock contamos con las siguientes computadoras: \n%s\n%s\n%s\n",
                 computadora_1,
@@ -47,11 +48,11 @@ public class Taller_Refuerzo {
         while (bandera.equals("Si")) {
             System.out.println("Ingresar nombre del cliente: ");
             nombre_cliente = entrada.nextLine();
-            System.out.println("¿Ingrese tipo de cliente(1, 2, 3 o 4): ");
+            System.out.println("Ingrese tipo de cliente(1, 2, 3 o 4): ");
             tipo_cliente = entrada.nextInt();
-            System.out.println("¿Ingresar cédula del cliente: ");
+            System.out.println("Ingresar cédula del cliente: ");
             cedula = entrada.nextInt();
-            System.out.println("¿Qué computadora desea adquirir?: ");
+            System.out.println("¿Qué computadora desea adquirir?(1, 2 0 3): ");
             entrada.nextLine();
             computador = entrada.nextLine();
             System.out.println("Ingresar la cantidad de computadoras a comprar: ");
@@ -145,10 +146,13 @@ public class Taller_Refuerzo {
                     , numero_computadoras
                     , precio_computadora
                     , total);
+            suma_pagar = suma_pagar + total;
             System.out.println("¿Desea ingresar más datos?[Si/No]");
             entrada.nextLine();
             bandera = entrada.nextLine();  
         }
-        System.out.println(cadena_1);
+        System.out.printf("%s\nTotal venta de computadoras:%s\n"
+                          , cadena_1
+                          , suma_pagar);
     }
 }
